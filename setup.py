@@ -67,7 +67,7 @@ REQUIREMENTS_EXTERNAL = [
     'PyHive==0.3.0',
     'thrift==0.10.0',
     'thrift-sasl==0.2.1',
-    'virtualenvwrapper>=4.7.1'
+    'virtualenvwrapper>=4.7.1',
     'requests==2.19.1',
     'python-dateutil==2.7.3',
     'python-slugify==0.1.0',
