@@ -88,6 +88,9 @@ REQUIREMENTS_EXTERNAL = [
     'progressbar2==3.34.3',
     'urllib3==1.21.1',
     'idna==2.5',
+    'Keras==2.2.0',
+    'tensorflow==1.8.0',
+    'bleach==1.5.0',
 ]
 
 # Test dependencies
