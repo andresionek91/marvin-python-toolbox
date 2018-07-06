@@ -41,7 +41,7 @@ class TestKerasSerializer(object):
 
     @mock.patch('joblib.load')
     def test__serializer_load_not_keras(self, mocked_load, engine):
-        mocked_path = "/tmp/engine/metrics"
+        mocked_path = "/tmp/engine/dataset"
         mocked_load.return_value = {"me": "here"}
         obj = engine._serializer_load(object_file_path=mocked_path)
         mocked_load.assert_called_once_with(mocked_path)
@@ -56,7 +56,7 @@ class TestKerasSerializer(object):
     @mock.patch('marvin_python_toolbox.engine_base.EngineBaseTraining._serializer_dump')
     def test__serializer_dump_not_keras(self, mocked_dump, engine):
         mocked_obj = mock.MagicMock()
-        mocked_path = "/tmp/engine/metrics"
+        mocked_path = "/tmp/engine/dataset"
         engine._serializer_dump(mocked_obj, object_file_path=mocked_path)
         mocked_dump.assert_called_once_with(mocked_obj, mocked_path)
 
