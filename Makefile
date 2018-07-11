@@ -35,7 +35,7 @@ help:
 	@echo "        Build and upload the toolbox as a wheel package in pypi."
 
 marvin:
-	pip install -e . ".[testing]" --process-dependency-links
+	pip install -e ".[testing]" --process-dependency-links
 	marvin --help
 
 update:

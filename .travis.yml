@@ -16,7 +16,6 @@ before_install:
   - sudo tar -xf ./spark-2.1.1-bin-hadoop2.6.tgz
   - mkdir -p marvin_data
   - mkdir -p marvin_home
-  - export WORKON_HOME=$HOME/.virtualenvs
   - export MARVIN_HOME=./marvin_home
   - export MARVIN_DATA_PATH=./marvin_data
   - export SPARK_HOME=./spark-2.1.1-bin-hadoop2.6
@@ -28,7 +27,7 @@ before_install:
   - sudo pip install --upgrade pip
   - sudo pip install virtualenvwrapper --ignore-installed six
   - source virtualenvwrapper.sh
-  - mkvirtualenv marvin-env
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkvirtualenv marvin-env         ; fi
 
 install:
   - pip install codecov
