@@ -16,6 +16,7 @@ before_install:
   - sudo tar -xf ./spark-2.1.1-bin-hadoop2.6.tgz
   - mkdir -p marvin_data
   - mkdir -p marvin_home
+  - export WORKON_HOME=$HOME/.virtualenvs
   - export MARVIN_HOME=./marvin_home
   - export MARVIN_DATA_PATH=./marvin_data
   - export SPARK_HOME=./spark-2.1.1-bin-hadoop2.6
