@@ -5,6 +5,14 @@ from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
 
+REQUIREMENTS_TESTS = [
+    'pytest>=2.6.4',
+    'pytest-cov>=1.8.1',
+    'mock>=2.0.0',
+    'virtualenv>=15.0.1',
+    'tox>=2.2.0',
+]
+
 def _get_version():
     """Return the project version from VERSION file."""
 
@@ -75,13 +83,10 @@ setup(
         'marvin-python-toolbox==0.0.3',
         'Fabric==1.14.0',
     ],
-    tests_require=[
-        'pytest>=2.6.4',
-        'pytest-cov>=1.8.1',
-        'mock>=2.0.0',
-        'virtualenv>=15.0.1',
-        'tox>=2.2.0',
-    ],
+    tests_require=REQUIREMENTS_TESTS,
+    extras_require={
+        'testing': REQUIREMENTS_TESTS,
+    },
     cmdclass={
         'test': Tox,
     },
