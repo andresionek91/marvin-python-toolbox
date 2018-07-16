@@ -1,4 +1,4 @@
-.PHONY: help marvin update clean-pyc clean-build clean-reports clean-deps clean docker-build docker-push docker-run
+.PHONY: help marvin marvin-prod update clean-pyc clean-build clean-reports clean-deps clean docker-build docker-push docker-run
 
 DOCKER_VERSION?=0.00.01
 DOCKER_REGISTRY_ADRESS?=docker.registry.io
@@ -9,6 +9,8 @@ MARVIN_TOOLBOX_VERSION?={{project.toolbox_version}}
 help:
 	@echo "    marvin"
 	@echo "        Prepare project to be used as a marvin package."
+	@echo "    marvin-prod"
+	@echo "        Prepare project to be used in production environment."
 	@echo "    update"
 	@echo "        Reinstall requirements and setup.py dependencies."
 	@echo "    clean"
@@ -33,7 +35,7 @@ marvin:
 	marvin --help
 
 marvin-prod:
-	pip install -e . --process-dependency-links
+	pip install . --process-dependency-links
 	marvin --help
 
 update:
