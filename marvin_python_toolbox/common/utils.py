@@ -171,7 +171,7 @@ def _from_json_object_hook(obj):
 
 def to_json(data):
     """Convert non default objects to json."""
-    return json.dumps(data, default=_to_json_default)
+    return json.dumps(data, default=_to_json_default, ensure_ascii=False)
 
 
 def from_json(json_str):
