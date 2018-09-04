@@ -175,7 +175,7 @@ def to_json(data):
 
 
 def from_json(json_str):
-    return simplejson.loads(json_str, object_hook=_from_json_object_hook)
+    return simplejson.loads(json_str, object_hook=_from_json_object_hook, ensure_ascii=False)
 
 
 def validate_json(data, schema):
